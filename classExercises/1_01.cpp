@@ -6,7 +6,7 @@ int main() {
     std::cout << "A char? ";
     std::cin >> aChar;
     aNum = aChar;
-    std::cout << aNum << std::endlB;
+    std::cout << aNum << std::endl;
     return 0;
 }
 
