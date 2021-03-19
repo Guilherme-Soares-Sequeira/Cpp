@@ -35,9 +35,14 @@ int main() {
 
     //Trying to delay overflow and minimize inaccuracies
     long double result = 1.0;
+    long long top = 1, bot = 1;
     for (int i = 1; i < terms; i++) {
-        std::cout << "Sign: " << pow(-1, i) << " pow(" <<  x << "," << i << ") = " << pow(x,i) << " factorial(" << i << ") = " << factorial(i) << " total multiplication = " << (pow(-1, i) * static_cast<long double> (pow(x, i))/factorial(i)) << "\n";
-        result += (pow(-1, i) * static_cast<long double> (pow(x, i))/factorial(i));
+        std::cout << "Sign: " << pow(-1, i) << "; top = " << top << "; bot = " << bot << "; adding = " << pow(-1, i) * static_cast<long double> (top) / static_cast<long double> (bot) << "\n";
+        top *= x;
+        bot *= i;
+        result += pow(-1, i) * static_cast<long double> (top) / static_cast<long double> (bot);
+
+        
     }
     std::cout << std::setprecision(15) << "The sum of the first " << terms << " terms is " << result << std::endl;
     return 0;
