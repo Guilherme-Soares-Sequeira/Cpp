@@ -40,9 +40,7 @@ int main() {
         std::cout << "Sign: " << pow(-1, i) << "; top = " << top << "; bot = " << bot << "; adding = " << pow(-1, i) * static_cast<long double> (top) / static_cast<long double> (bot) << "\n";
         top *= x;
         bot *= i;
-        result += pow(-1, i) * static_cast<long double> (top) / static_cast<long double> (bot);
-
-        
+        result += pow(-1, i) * static_cast<long double> (top) / static_cast<long double> (bot);  
     }
     std::cout << std::setprecision(15) << "The sum of the first " << terms << " terms is " << result << std::endl;
     return 0;
